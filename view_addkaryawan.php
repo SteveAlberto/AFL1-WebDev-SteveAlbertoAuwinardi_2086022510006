@@ -27,7 +27,7 @@
       </div>
       <div class="card-body">
         <h1>Add Karyawan</h1>
-        <form method="post" action="controller_karyawan.php" class="w-50 mx-auto">
+        <form method="post" action="controller_karyawan.php" class="w-100 text-left">
           <div class="form row">
             <div class="form-group col-md-12">
               <label for="inputNama">Nama</label>
@@ -49,6 +49,7 @@
             </div>
           </div>
 
+          <div class="text-center">
           <button name="btnAdd" type="submit" class="btn btn-primary">Tambah Karyawan</button>
 
         </form>

@@ -34,21 +34,17 @@ function GetAllMembersWithID($MemberID){
 }
 
 function SetMember(){
-    $member = new member();
-    $member->nama = $_POST['setNama'];
-    $member->kantor = $_POST['setKantor'];
-    
-    $umur_karyawan = 0;
+    $targetNama = $_POST['setNama'];
+    $kantorBaru = $_POST['setKantor'];
+
     if (isset($_SESSION['memberlist'])) {
-        foreach ($_SESSION['memberlist'] as $data_lama) {
-            if ($data_lama->nama == $_POST['setNama']) {
-                $umur_karyawan = $data_lama->umur;
+        foreach ($_SESSION['memberlist'] as $index => $member) {
+            if ($member->nama == $targetNama) {
+                $_SESSION['memberlist'][$index]->kantor = $kantorBaru;
                 break;
             }
         }
     }
-    $member->umur = $umur_karyawan;
-    array_push($_SESSION['memberlist'], $member);
 }
 
 if (isset ($_POST['btnAdd'])) {
@@ -68,8 +64,7 @@ if (isset ($_POST['btnUpdate'])) {
 
 if (isset($_POST['btnSet'])) {
     SetMember();
-    header("Location: view_karyawan.php");
+    header("Location: view_setkaryawan.php");
     exit();
 }
 ?>
-

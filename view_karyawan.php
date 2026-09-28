@@ -47,7 +47,7 @@
                         $counter++;
                     ?>
                         <tr>
-                            <th scope="row"><?php $counter; ?></th>
+                            <th scope="row"><?php echo $counter; ?></th>
                             <td><?=$member->nama; ?></td>
                             <td><?=$member->kantor; ?></td>
                             <td><?=$member->umur; ?></td>
